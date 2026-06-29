@@ -15,21 +15,14 @@ Agent Request → Gateway → Scheduler → Sandbox → Execution → Storage �
 ```
 OpenAgentLab/
 ├── server/                        # Go backend (DDD / clean architecture)
-│   ├── cmd/                       # Entry points (one per module)
-│   │   ├── openagent-sandbox/
-│   │   ├── openagent-runtime/
-│   │   ├── openagent-storage/
-│   │   ├── openagent-network/
-│   │   ├── openagent-observability/
-│   │   └── openagent-control-plane/
-│   ├── internal/                  # Private packages, layered by module
-│   │   ├── sandbox/               #   domain → service → repo → adapter
-│   │   ├── runtime/
-│   │   ├── storage/
-│   │   ├── network/
-│   │   ├── observability/
-│   │   └── controlplane/
+│   ├── openagent-sandbox/         #   cmd/ + internal/ (domain → service → repo → adapter)
+│   ├── openagent-runtime/
+│   ├── openagent-storage/
+│   ├── openagent-network/
+│   ├── openagent-observability/
+│   ├── openagent-control-plane/
 │   └── pkg/                       # Shared utilities (logger, config)
+├── deployments/                   # Deployment configs (Docker, k8s, etc.)
 ├── api/proto/                     # Protobuf definitions (shared)
 ├── web/                           # Frontend (reserved)
 └── out/                           # Build artifacts

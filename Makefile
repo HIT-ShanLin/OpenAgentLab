@@ -7,22 +7,22 @@ BUILD_DIR = out
 all: sandbox runtime storage network observability control-plane
 
 sandbox:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-sandbox ./cmd/openagent-sandbox
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-sandbox ./openagent-sandbox/cmd
 
 runtime:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-runtime ./cmd/openagent-runtime
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-runtime ./openagent-runtime/cmd
 
 storage:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-storage ./cmd/openagent-storage
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-storage ./openagent-storage/cmd
 
 network:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-network ./cmd/openagent-network
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-network ./openagent-network/cmd
 
 observability:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-observability ./cmd/openagent-observability
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-observability ./openagent-observability/cmd
 
 control-plane:
-	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-control-plane ./cmd/openagent-control-plane
+	cd $(SERVER_DIR) && CGO_ENABLED=0 go build -trimpath -o ../$(BUILD_DIR)/openagent-control-plane ./openagent-control-plane/cmd
 
 # Run all tests
 test:
